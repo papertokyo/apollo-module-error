@@ -1,3 +1,6 @@
+const { InMemoryCache } = require('apollo-cache-inmemory')
+const cache = new InMemoryCache()
+
 module.exports = {
   /*
   ** Build configuration
@@ -28,7 +31,8 @@ module.exports = {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://localhost:4000/en-prod'
+        httpEndpoint: 'https://outpost-gql-server.now.sh/en-prod',
+        cache
       },
       pt: {
         httpEndpoint: 'http://localhost:4000/pt-prod'
